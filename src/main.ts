@@ -49,7 +49,7 @@ async function run(): Promise<void> {
 
     const octokit = new Octokit({auth: `token ${token}`, request: {fetch}})
 
-    core.debug(`Using appid: ${appId}`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+    //core.debug(`Using appid: ${appId}`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
 
     const commentFindBy = `<!-- Created by storybook-chromatic-link-comment -->`
 
