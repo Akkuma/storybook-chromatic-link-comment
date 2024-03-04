@@ -70,6 +70,7 @@ ${
 - the [branch specific storybook](${branchStorybookUrl})
 `
 
+    core.debug(`owner: ${owner}, repo: ${repo}, issue_number: ${number}`)
     const {data: comments} = await octokit.issues.listComments({
       owner,
       repo,
@@ -77,6 +78,7 @@ ${
       per_page: 100
     })
 
+    core.debug(`Comments: ${comments ? JSON.stringify(comments) : comments}`)
     const existingComment = comments.find(({body}) =>
       body?.includes(commentFindBy)
     )
