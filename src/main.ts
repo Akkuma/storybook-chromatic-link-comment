@@ -27,6 +27,7 @@ async function run(): Promise<void> {
       ref
     } = github.context
 
+    core.debug(`Ctx: ${JSON.stringify(github.context)}`)
     let branch: string | undefined
     if (github.context.eventName === 'pull_request') {
       branch = process.env.GITHUB_HEAD_REF

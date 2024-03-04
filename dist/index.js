@@ -61,6 +61,7 @@ function run() {
                 throw new Error('app-id is required, when build-url and storybook-url are not provided');
             }
             const { repo: { repo, owner }, issue: { number }, ref } = github.context;
+            core.debug(`Ctx: ${JSON.stringify(github.context)}`);
             let branch;
             if (github.context.eventName === 'pull_request') {
                 branch = process.env.GITHUB_HEAD_REF;
