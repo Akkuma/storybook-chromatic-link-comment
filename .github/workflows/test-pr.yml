@@ -26,4 +26,4 @@ jobs:
           storybook-url: bla
           build-url: bla
           review-url: bla
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token }}
