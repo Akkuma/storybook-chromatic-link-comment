@@ -18,6 +18,8 @@ jobs:
           npm run all
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: ./
@@ -26,4 +28,4 @@ jobs:
           storybook-url: bla
           build-url: bla
           review-url: bla
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
